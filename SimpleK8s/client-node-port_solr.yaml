@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-node-port-solr
+spec:
+  type: NodePort
+  ports: 
+    - port: 3040
+      targetPort: 8983
+      nodePort: 31519
+  selector:
+    component: solr

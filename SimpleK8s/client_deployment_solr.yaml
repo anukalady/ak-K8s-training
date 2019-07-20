@@ -1,0 +1,20 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata: 
+  name: solr-deployment
+spec:
+  replicas: 2
+  selector: 
+    matchLabels:
+      component: solr
+  template:
+    metadata:
+      labels:
+        component: solr
+    spec:
+      containers:
+        - name: solr
+          image: solr
+          ports: 
+            - containerPort: 8983
+          
